@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:octo_image/octo_image.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'details_model.dart';
 export 'details_model.dart';
@@ -133,40 +130,13 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 5.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      child: FlutterFlowExpandedImageView(
-                                        image: CachedNetworkImage(
-                                          imageUrl: widget.noSearchRef!.image,
-                                          fit: BoxFit.contain,
-                                        ),
-                                        allowRotation: false,
-                                        tag: widget.noSearchRef!.image,
-                                        useHeroAnimation: true,
-                                      ),
-                                    ),
-                                  );
-                                },
-                                child: Hero(
-                                  tag: widget.noSearchRef!.image,
-                                  transitionOnUserGestures: true,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: CachedNetworkImage(
-                                      imageUrl: widget.noSearchRef!.image,
-                                      width: 300.0,
-                                      height: 200.0,
-                                      fit: BoxFit.scaleDown,
-                                    ),
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: CachedNetworkImage(
+                                  imageUrl: widget.noSearchRef!.image,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.scaleDown,
                                 ),
                               ),
                             ),
@@ -194,18 +164,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'General Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.search,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 20.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'General Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -461,18 +448,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Sim Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.sim_card_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Sim Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -635,18 +639,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Design Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.mobile,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 20.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Design Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -809,18 +830,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Display Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.settings_brightness_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Display Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -1252,18 +1290,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Memory Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.sd_storage_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Memory Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -1483,18 +1538,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Camera Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.camera,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Camera Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -1957,18 +2029,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Technical Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.memory_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Technical Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -2318,18 +2407,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Battery Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.batteryThreeQuarters,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Battery Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -2551,18 +2657,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Connectivity',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.five_g_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Connectivity',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -3025,18 +3148,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Extra Features',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.featured_play_list_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Extra Features',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -3574,18 +3714,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Multimedia',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.perm_media_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Multimedia',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -3890,21 +4047,37 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                   ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'General Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                    ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 0.0, 0.0, 0.0),
+                                        child: Icon(
+                                          Icons.search,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 20.0,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'General Information',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                fontSize: 17.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 Row(
@@ -4099,28 +4272,34 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                       widget.searchRef!.buy1);
                                                 },
                                               ),
-                                              FlutterFlowIconButton(
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius: 20.0,
-                                                buttonSize: 40.0,
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                icon: FaIcon(
-                                                  FontAwesomeIcons
-                                                      .firefoxBrowser,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 24.0,
+                                              if (valueOrDefault<bool>(
+                                                widget.searchRef!.buy2 != '',
+                                                true,
+                                              ))
+                                                FlutterFlowIconButton(
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  borderRadius: 20.0,
+                                                  buttonSize: 40.0,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  icon: FaIcon(
+                                                    FontAwesomeIcons
+                                                        .firefoxBrowser,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  onPressed: () async {
+                                                    await launchURL(
+                                                        widget.searchRef!.buy2);
+                                                  },
                                                 ),
-                                                onPressed: () async {
-                                                  await launchURL(
-                                                      widget.searchRef!.buy2);
-                                                },
-                                              ),
                                             ],
                                           ),
                                         ),
@@ -4154,18 +4333,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Sim Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.sim_card_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Sim Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -4328,18 +4524,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Design Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.mobile,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 20.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Design Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -4502,18 +4715,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Display Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.settings_brightness_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Display Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -4944,18 +5174,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Memory Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.sd_storage_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Memory Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -5175,18 +5422,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Camera Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.camera,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Camera Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -5652,18 +5916,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Technical Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.memory_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Technical Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -6013,18 +6294,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Battery Information',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.batteryThreeQuarters,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Battery Information',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -6241,18 +6539,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Connectivity',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.five_g_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Connectivity',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -6715,18 +7030,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Extra Features',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.featured_play_list_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Extra Features',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -7262,18 +7594,35 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Multimedia',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 17.0,
-                                            fontWeight: FontWeight.w500,
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.perm_media_outlined,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Multimedia',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 17.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
