@@ -8,10 +8,8 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'home_page_model.dart';
@@ -35,11 +33,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     super.initState();
     _model = createModel(context, () => HomePageModel());
 
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      FFAppState().searchActive = false;
-    });
-
     _model.textController ??= TextEditingController();
   }
 
@@ -60,13 +53,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
-            child: SizedBox(
-              width: 50.0,
-              height: 50.0,
-              child: SpinKitWave(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-                size: 50.0,
+          return Scaffold(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            body: Center(
+              child: SizedBox(
+                width: 50.0,
+                height: 50.0,
+                child: SpinKitWave(
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  size: 50.0,
+                ),
               ),
             ),
           );
@@ -296,132 +292,114 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                     Container(
                       width: double.infinity,
+                      height: 45.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              FlutterFlowIconButton(
-                                borderColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: 20.0,
-                                buttonSize: 40.0,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                icon: Icon(
-                                  Icons.clear,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  setState(() => _model
-                                      .choiceChipsValueController?.value = []);
-                                },
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 5.0, 0.0),
-                                child: FlutterFlowChoiceChips(
-                                  options: [
-                                    ChipData('Apple'),
-                                    ChipData('Samsung'),
-                                    ChipData('Vivo'),
-                                    ChipData('Xiaomi'),
-                                    ChipData('Realme'),
-                                    ChipData('OnePlus'),
-                                    ChipData('Motorola'),
-                                    ChipData('OPPO'),
-                                    ChipData('Poco'),
-                                    ChipData('Google'),
-                                    ChipData('iQOO'),
-                                    ChipData('Tecno'),
-                                    ChipData('Infinix'),
-                                    ChipData('Asus'),
-                                    ChipData('Nokia'),
-                                    ChipData('Nothing'),
-                                    ChipData('Lava'),
-                                    ChipData('Micromax')
-                                  ],
-                                  onChanged: (val) => setState(
-                                      () => _model.choiceChipsValues = val),
-                                  selectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    iconSize: 18.0,
-                                    elevation: 2.0,
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 0.0, 0.0),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                FlutterFlowIconButton(
+                                  borderColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: 20.0,
+                                  buttonSize: 40.0,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  icon: Icon(
+                                    Icons.clear,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
                                   ),
-                                  unselectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
+                                  onPressed: () async {
+                                    setState(() => _model
+                                        .choiceChipsValueController
+                                        ?.value = []);
+                                  },
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 5.0, 0.0),
+                                  child: FlutterFlowChoiceChips(
+                                    options: [
+                                      ChipData('Apple'),
+                                      ChipData('Samsung'),
+                                      ChipData('Vivo'),
+                                      ChipData('Xiaomi'),
+                                      ChipData('Realme'),
+                                      ChipData('OnePlus'),
+                                      ChipData('Motorola'),
+                                      ChipData('OPPO'),
+                                      ChipData('Poco'),
+                                      ChipData('Google'),
+                                      ChipData('iQOO'),
+                                      ChipData('Tecno'),
+                                      ChipData('Infinix'),
+                                      ChipData('Asus'),
+                                      ChipData('Nokia'),
+                                      ChipData('Nothing'),
+                                      ChipData('Lava'),
+                                      ChipData('Micromax')
+                                    ],
+                                    onChanged: (val) => setState(
+                                        () => _model.choiceChipsValues = val),
+                                    selectedChipStyle: ChipStyle(
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
                                               .primaryText,
-                                        ),
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    iconSize: 18.0,
-                                    elevation: 0.0,
-                                  ),
-                                  chipSpacing: 12.0,
-                                  multiselect: true,
-                                  initialized: _model.choiceChipsValues != null,
-                                  alignment: WrapAlignment.start,
-                                  controller:
-                                      _model.choiceChipsValueController ??=
-                                          FormFieldController<List<String>>(
-                                    [],
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                      iconColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      iconSize: 18.0,
+                                      elevation: 2.0,
+                                    ),
+                                    unselectedChipStyle: ChipStyle(
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .alternate,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                      iconColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      iconSize: 18.0,
+                                      elevation: 0.0,
+                                    ),
+                                    chipSpacing: 12.0,
+                                    rowSpacing: 12.0,
+                                    multiselect: true,
+                                    initialized:
+                                        _model.choiceChipsValues != null,
+                                    alignment: WrapAlignment.start,
+                                    controller:
+                                        _model.choiceChipsValueController ??=
+                                            FormFieldController<List<String>>(
+                                      [],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: 30.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 4.0, 0.0, 0.0),
-                            child: Text(
-                              'Results',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    fontSize: 16.0,
-                                  ),
+                              ],
                             ),
                           ),
-                        ],
+                        ),
                       ),
                     ),
                     if (!FFAppState().searchActive)
@@ -437,8 +415,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               5.0, 0.0, 5.0, 0.0),
                           child: StreamBuilder<List<PhonesRecord>>(
                             stream: queryPhonesRecord(
-                              queryBuilder: (phonesRecord) => phonesRecord
-                                  .whereIn('Brand', _model.choiceChipsValues),
+                              queryBuilder: (phonesRecord) =>
+                                  phonesRecord.whereIn(
+                                      'Brand',
+                                      _model.choiceChipsValues != ''
+                                          ? _model.choiceChipsValues
+                                          : null),
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
@@ -449,7 +431,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     height: 50.0,
                                     child: SpinKitWave(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                       size: 50.0,
                                     ),
                                   ),
@@ -480,7 +462,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     onTap: () async {
                                       context.pushNamed(
                                         'details',
-                                        queryParams: {
+                                        queryParameters: {
                                           'noSearchRef': serializeParam(
                                             gridViewPhonesRecord,
                                             ParamType.Document,
@@ -666,7 +648,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     onTap: () async {
                                       context.pushNamed(
                                         'details',
-                                        queryParams: {
+                                        queryParameters: {
                                           'searchRef': serializeParam(
                                             phonesSearchItem,
                                             ParamType.Document,

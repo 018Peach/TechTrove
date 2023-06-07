@@ -12,53 +12,17 @@ class FFAppState extends ChangeNotifier {
 
   FFAppState._internal();
 
-  Future initializePersistedState() async {
-    prefs = await SharedPreferences.getInstance();
-    _recentSearches =
-        prefs.getStringList('ff_recentSearches') ?? _recentSearches;
-  }
+  Future initializePersistedState() async {}
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
 
-  late SharedPreferences prefs;
-
   bool _searchActive = false;
   bool get searchActive => _searchActive;
   set searchActive(bool _value) {
     _searchActive = _value;
-  }
-
-  List<String> _recentSearches = [];
-  List<String> get recentSearches => _recentSearches;
-  set recentSearches(List<String> _value) {
-    _recentSearches = _value;
-    prefs.setStringList('ff_recentSearches', _value);
-  }
-
-  void addToRecentSearches(String _value) {
-    _recentSearches.add(_value);
-    prefs.setStringList('ff_recentSearches', _recentSearches);
-  }
-
-  void removeFromRecentSearches(String _value) {
-    _recentSearches.remove(_value);
-    prefs.setStringList('ff_recentSearches', _recentSearches);
-  }
-
-  void removeAtIndexFromRecentSearches(int _index) {
-    _recentSearches.removeAt(_index);
-    prefs.setStringList('ff_recentSearches', _recentSearches);
-  }
-
-  void updateRecentSearchesAtIndex(
-    int _index,
-    Function(String) updateFn,
-  ) {
-    updateFn(_recentSearches[_index]);
-    prefs.setStringList('ff_recentSearches', _recentSearches);
   }
 }
 
@@ -70,4 +34,16 @@ LatLng? _latLngFromString(String? val) {
   final lat = double.parse(split.first);
   final lng = double.parse(split.last);
   return LatLng(lat, lng);
+}
+
+void _safeInit(Function() initializeField) {
+  try {
+    initializeField();
+  } catch (_) {}
+}
+
+Future _safeInitAsync(Function() initializeField) async {
+  try {
+    await initializeField();
+  } catch (_) {}
 }
