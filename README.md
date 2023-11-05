@@ -1,20 +1,18 @@
-# smartphones
 
-A new Flutter project.
+# TechTrove
 
-## Getting Started
+A FlutterFlow mobile app that provides detailed smartphone information by utilizing a Python Web Scraper [Scrapey](https://github.com/018Peach/scrapey)  with Selenium for data collection and Firebase Firestore for storage.
 
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+## Screenshots
 
-### Getting started continued:
+Home Page
+![Home Page](https://raw.githubusercontent.com/018Peach/TechTrove/main/assets/tt_home_page.jpg)
 
-This project is a starting point for a Flutter application.
+Filter Phones by Brands
+![Filter By Brands](https://raw.githubusercontent.com/018Peach/TechTrove/main/assets/tt_brand_filter.jpg)
 
-A few resources to get you started if this is your first Flutter project:
+Search Phones
+![Search Phones](https://raw.githubusercontent.com/018Peach/TechTrove/main/assets/tt_search_phone.jpg)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Phone Specification Page
+![Specification Page](https://raw.githubusercontent.com/018Peach/TechTrove/main/assets/tt_specs.jpg)
